@@ -1,0 +1,67 @@
+buildscript {
+    ext {
+        kotlin_version = '1.3.71'
+        spring_boot_version = '2.2.6.RELEASE'
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.71'
+}
+
+group 'com.timwheeler.microservice'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-starter-validation:$spring_boot_version"
+    implementation "org.springframework.boot:spring-boot-starter-json:$spring_boot_version"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2"
+}
+
+allprojects {
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs += 'mainn'
+            kotlin.srcDirs += 'mainn'
+        }
+    }
+
+    compileKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    apply plugin: "kotlin"
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        implementation "org.springframework.boot:spring-boot-starter-data-jpa:$spring_boot_version"
+        implementation "org.springframework.boot:spring-boot-starter-validation:$spring_boot_version"
+        implementation "org.springframework.boot:spring-boot-starter-json:$spring_boot_version"
+        implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2"
+    }
+
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
