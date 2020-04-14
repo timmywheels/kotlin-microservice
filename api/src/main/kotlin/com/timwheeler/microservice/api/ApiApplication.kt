@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync
 @SpringBootApplication(scanBasePackages = ["com.timwheeler.microservice"])
 @EntityScan(basePackages = ["com.timwheeler.microservice.domain"])
 @ServletComponentScan(basePackages = ["com.timwheeler.microservice"])
-@ComponentScan(basePackages = ["com.timwheeler.microservice"])
+//@ComponentScan(basePackages = ["com.timwheeler.microservice"])
 @EnableAsync
 open class ApiApplication {
     companion object{
