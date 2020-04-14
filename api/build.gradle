@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":composition")
+    compile project(":domain")
+    compile project(":persistence")
+}

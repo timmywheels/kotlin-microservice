@@ -1,0 +1,38 @@
+server:
+  port: 9100
+  servlet:
+    context-path: '/api'
+
+info:
+  app:
+    name: Microservice API
+    description: Spring Boot Microservice API
+    version: 0.0.1
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/microservice
+    username: postgres
+    password: postgres
+    initialization-mode: always
+    tomcat:
+      validation-query: SELECT * from users LIMIT 1
+  application:
+    name: 'microservice'
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+
+logging:
+  level:
+    com.timwheeler: info
