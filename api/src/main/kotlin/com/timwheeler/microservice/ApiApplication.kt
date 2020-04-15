@@ -1,16 +1,14 @@
-package com.timwheeler.microservice.api
+package com.timwheeler.microservice
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.boot.web.servlet.ServletComponentScan
-import org.springframework.context.annotation.ComponentScan
 import org.springframework.scheduling.annotation.EnableAsync
 
-@SpringBootApplication(scanBasePackages = ["com.timwheeler.microservice"])
-@EntityScan(basePackages = ["com.timwheeler.microservice.domain"])
-@ServletComponentScan(basePackages = ["com.timwheeler.microservice"])
-//@ComponentScan(basePackages = ["com.timwheeler.microservice"])
+@SpringBootApplication
+@EntityScan
+@ServletComponentScan
 @EnableAsync
 open class ApiApplication {
     companion object{
